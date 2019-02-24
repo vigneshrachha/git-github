@@ -1,0 +1,67 @@
+git init
+
+git remote add origin "https://github.com/vigneshrachha/git-github.git"
+
+git pull origin master
+
+git status
+
+git add <file name>
+
+git config --global user.name "vigneshrachha"
+
+git config --global user.email "vigneshrachha31@gmail.com"
+
+git commit -m "Message"
+
+git add -A #adding multiple files to index in a single go
+
+git commit -a -m "trying multiple commit" #commiting multiple files
+
+Note: Commiting will be aborted if there is no message. 
+Also, when a file is modified and if we want to commit it again, we need not add it to the index again as it is already added.
+
+git log # to know the commit history
+
+#Branching
+
+git branch firstBranch
+
+git checkout firstBranch # to switch to that branch
+
+Also,changes made in the new branch will not be reflected in the master branch, unless merged.
+
+
+#branch merging
+
+Note: whenever merging the branch, we have to first checkout into the destination branch. 
+
+#git pull = git fetch + git merge
+
+git merge firstBranch
+
+#what is a git stash?
+
+
+#pushing from new branch in local repo to new branch in central repo(git hub)
+
+Before that, create a ssh connection from central to local
+
+1) ssh-keygen
+
+2) copy the key and paste in ssh config in ui
+
+3) ssh -T git@github.com
+
+4) checkout in the branch which is to be merged
+
+5) git push origin firstBranch
+
+Done!
+
+Do the same for master, if master has to be pushed
+
+#reverting back the changes to a file in local repo.
+
+git checkout (8 digit hash code of the commit where we need to revert) revert.txt 
+
